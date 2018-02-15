@@ -8,12 +8,13 @@ from twilio.rest import Client
 from pymonzo import MonzoAPI
 from pymonzo.api_objects import MonzoAccount, MonzoTransaction
 
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.DEBUG)
 log = logging.getLogger(__name__)
 
 
 def get_api() -> MonzoAPI:
     # TODO - Check connectivity - see https://github.com/pawelad/pymonzo/blob/master/src/pymonzo/exceptions.py
+    log.debug("Connecting to api...")
     return MonzoAPI()
 
 
@@ -36,19 +37,23 @@ def round_up_transaction(transaction: MonzoTransaction) -> float:
 
 
 def get_current_account(monzo: MonzoAPI) -> MonzoAccount:
+    log.debug("Getting current account...")
     current_account = list(filter(lambda x: x.type == "uk_retail", monzo.accounts()))
     if len(current_account) == 1:
+        log.debug(f"Got {current_account}...")
         return current_account[0]
     else:
         return None
     
 
 def get_todays_transactions(monzo: MonzoAPI, account: MonzoAccount) -> List[MonzoTransaction]:
+    log.debug(f"Getting transactions from {account}...")
     transactions = monzo.transactions(account.id, limit=50)
     return list(filter(lambda x: x.created.date() == (datetime.today().date()), transactions))
 
 
 def send_sms(change, recipient):
+    log.debug(f"Sending sms to {recipient}...")
     client = Client()
-    client.messages.create(to=recipient, from_=os.getenv("TWILIO_NUMBER"),
+    client.messages.create(to=recipient, from_=os.getenv("TWILIO_FROM_NUMBER"),
                                  body=f"You saved £{change / 100} today!")
