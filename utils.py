@@ -1,7 +1,9 @@
+import os
 import logging
 from datetime import datetime
 from decimal import Decimal
 from typing import List
+from twilio.rest import Client
 
 from pymonzo import MonzoAPI
 from pymonzo.api_objects import MonzoAccount, MonzoTransaction
@@ -44,3 +46,9 @@ def get_current_account(monzo: MonzoAPI) -> MonzoAccount:
 def get_todays_transactions(monzo: MonzoAPI, account: MonzoAccount) -> List[MonzoTransaction]:
     transactions = monzo.transactions(account.id, limit=50)
     return list(filter(lambda x: x.created.date() == (datetime.today().date()), transactions))
+
+
+def send_sms(change, recipient):
+    client = Client()
+    client.messages.create(to=recipient, from_=os.getenv("TWILIO_NUMBER"),
+                                 body=f"You saved £{change / 100} today!")
