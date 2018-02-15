@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "9818d5e726cc73aee41b31236ac519810838ddb5902b8ac8f552bd6a3bfcdfa1"
+            "sha256": "e352a5a8ba65cb5fdce14cfa81f9af45c5539ccff3373ed1eb67bfefa58bcc25"
         },
         "host-environment-markers": {
             "implementation_name": "cpython",
@@ -142,12 +142,26 @@
             ],
             "version": "==1.5.2"
         },
+        "pyjwt": {
+            "hashes": [
+                "sha256:a4e5f1441e3ca7b382fd0c0b416777ced1f97c64ef0c33bfa39daf38505cfd2f",
+                "sha256:500be75b17a63f70072416843dc80c8821109030be824f4d14758f114978bae7"
+            ],
+            "version": "==1.5.3"
+        },
         "pymonzo": {
             "hashes": [
                 "sha256:678e4e14d7284f9d881c4461392e36c1d5928916dc65a9bcb35b91c0dacd6d03",
                 "sha256:b9679cc7fef0e261b1bfb26d2180a471468bb08c2ae14c0a2ef0766501fed262"
             ],
             "version": "==0.10.3"
+        },
+        "pysocks": {
+            "hashes": [
+                "sha256:3fe52c55890a248676fd69dc9e3c4e811718b777834bcaab7a8125cf9deac672"
+            ],
+            "markers": "python_version >= '3.0'",
+            "version": "==1.6.8"
         },
         "pytest": {
             "hashes": [
@@ -169,6 +183,20 @@
                 "sha256:891c38b2a02f5bb1be3e4793866c8df49c7d19baabf9c1bad62547e0b4866aca"
             ],
             "version": "==2.6.1"
+        },
+        "pytz": {
+            "hashes": [
+                "sha256:ed6509d9af298b7995d69a440e2822288f2eca1681b8cce37673dbb10091e5fe",
+                "sha256:f93ddcdd6342f94cea379c73cddb5724e0d6d0a1c91c9bdef364dc0368ba4fda",
+                "sha256:61242a9abc626379574a166dc0e96a66cd7c3b27fc10868003fa210be4bff1c9",
+                "sha256:ba18e6a243b3625513d85239b3e49055a2f0318466e0b8a92b8fb8ca7ccdf55f",
+                "sha256:07edfc3d4d2705a20a6e99d97f0c4b61c800b8232dc1c04d87e8554f130148dd",
+                "sha256:3a47ff71597f821cd84a162e71593004286e5be07a340fd462f0d33a760782b5",
+                "sha256:5bd55c744e6feaa4d599a6cbd8228b4f8f9ba96de2c38d56f08e534b3c9edf0d",
+                "sha256:887ab5e5b32e4d0c86efddd3d055c1f363cbaa583beb8da5e22d2fa2f64d51ef",
+                "sha256:410bcd1d6409026fbaa65d9ed33bf6dd8b1e94a499e32168acfc7b332e4095c0"
+            ],
+            "version": "==2018.3"
         },
         "requests": {
             "hashes": [
@@ -197,6 +225,13 @@
                 "sha256:d0afd5e8a7ac69bfb1372e1bbfa3c63c22e3db8ae1284690e96b45c4430d08d0"
             ],
             "version": "==1.1"
+        },
+        "twilio": {
+            "hashes": [
+                "sha256:b81a5efff04b09a20633496490f542a109412bc74ebd867a257f63c203b8d04a",
+                "sha256:8575626315363256f0bcffa49fb0714f907cf1a3f7f15f4dcb99a8245a615cfb"
+            ],
+            "version": "==6.10.3"
         },
         "urllib3": {
             "hashes": [
